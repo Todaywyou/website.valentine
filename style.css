@@ -1,0 +1,96 @@
+/* Mengatur background gradasi agar memenuhi seluruh halaman */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, white 70%, #ff99a0 85%, #df687c 100%);
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 300px; /* Sesuaikan agar konten tidak tertutup header */
+}
+
+/* Header agar lebar penuh */
+.header-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Pastikan gambar memenuhi lebar layar */
+    height: 250px; /* Sesuaikan tinggi */
+    background-image: url('header.png'); /* Pastikan path gambar benar */
+    background-size: contain; /* Gunakan contain agar gambar tidak terpotong */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Naikkan gambar ke atas */
+}
+
+.people-image {
+    width: 450px; /* Perbesar gambar */
+    height: auto;
+}
+
+
+
+/* Kotak teks */
+.container {
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    display: inline-block;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    text-align: center;
+}
+
+/* Tombol */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: red;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN UNTUK HP */
+/* ============================= */
+@media screen and (max-width: 768px) {
+    .header-container {
+        height: 180px; /* Ukuran header lebih kecil di HP */
+    }
+
+    .container {
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    /* Menyesuaikan padding-top agar konten tidak tertutup header */
+    html, body {
+        padding-top: 180px;
+    }
+}

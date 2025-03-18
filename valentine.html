@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Save the Date</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8e8e8;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .calendar {
+            margin-top: 10px;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .calendar td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .highlight {
+            background-color: pink;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+        .gallery {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .gallery-item {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .gallery-item img {
+            width: 40%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .gallery-item .desc {
+            width: 60%;
+            padding: 20px;
+            text-align: left;
+        }
+        .gallery-item.reverse {
+            flex-direction: row-reverse;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #ff4d6d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .music-section {
+            margin-top: 50px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        /* Animasi Muncul */
+        .gallery-item.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            display: inline-block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            margin-top: 30px; /* Tambahkan jarak dari atas */}
+
+            .typing-container {
+            margin-top: 50px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: inline-block;
+            width: 80%;
+            max-width: 800px;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        #valentine-container {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#valentine-container.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+        .typing-text {
+            white-space: pre-wrap;
+            overflow: hidden;
+            border-right: 2px solid black;
+            display: inline-block;
+        }
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+        .typing-text::after {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background: black;
+            animation: blink 0.8s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>HAPPY VALENTINE</h2>
+        <p>Setiap hari adalah hari kasih sayang jika bersamamu</p>
+        <table class="calendar">
+            <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+            <tr>
+                <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+                <td class="highlight">14</td>
+            </tr>
+            <tr>
+                <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+            </tr>
+            <tr>
+                <td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td>
+            </tr>
+        </table>
+        <p><a href="#special">Spesial untuk mu</a></p>
+    </div>
+
+    <div class="gallery" id="special">
+        <div class="gallery-item">
+            <img src="image1.png" alt="Foto 1">
+            <div class="desc">
+                <h3>Kenangan Manis</h3>
+                <p>Setiap momen bersamamu adalah kebahagiaan yang tak ternilai.</p>
+            </div>
+        </div>
+        <div class="gallery-item reverse">
+            <img src="image2.png" alt="Foto 2">
+            <div class="desc">
+                <h3>Cinta yang Tumbuh</h3>
+                <p>Setiap hari kita belajar dan tumbuh bersama dalam cinta.</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="image3.png" alt="Foto 3">
+            <div class="desc">
+                <h3>Selamanya Bersama</h3>
+                <p>waktu terus berjalan dan aku ingin menghabiskan bersama mu</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container"  id="valentine-container">
+        <h2>HAPPY VALENTINE</h2>
+        <p>Goresan kecil untuk mu </p>
+    </div>
+
+    <div class="typing-container">
+        <span class="typing-text" id="typing-text"></span>
+    </div>
+    
+    
+
+    <script>
+        const text = "Sayang, sejak pertama kali aku mengenalmu, hidupku terasa lebih indah. Setiap detik bersamamu adalah anugerah, dan aku ingin menghabiskan waktu ini dengan penuh cinta dan kebahagiaan bersamamu. Tidak ada yang lebih berharga daripada cinta kita. Kamu adalah alasan senyumku setiap hari. Semoga kita selalu bersama selamanya.";
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById("typing-text").textContent += text.charAt(index);
+                index++;
+                setTimeout(typeText, 50); // Kecepatan mengetik
+            }
+        }
+
+        window.onload = function() {
+            setTimeout(typeText, 1000); // Mulai animasi setelah 1 detik
+        };
+        
+    </script>
+
+     <script>
+        function checkScroll() {
+            const container = document.getElementById("valentine-container");
+            const rect = container.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
+            
+            if (rect.top <= windowHeight - 100 && rect.bottom >= 100) {
+                container.classList.add("show");
+            } else {
+                container.classList.remove("show");
+            }
+        }
+
+        window.addEventListener("scroll", checkScroll);
+        window.addEventListener("load", checkScroll);
+    </script>
+
+    <div class="music-section" id="music">
+        <h3>Musik untuk orang Spesial</h3>
+        <audio controls>
+            <source src="music1.mp3" type="audio/mp3">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+        <audio controls>
+            <source src="music2.mp3" type="audio/mp3">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+        <audio controls>
+            <source src="music3.mp3" type="audio/mp3">
+            Browser Anda tidak mendukung elemen audio.
+        </audio>
+    </div>
+
+    <script>
+        function scrollToMusic() {
+            document.getElementById("music").scrollIntoView({ behavior: "smooth" });
+        }
+
+        // Animasi Scroll untuk Galeri
+        function checkScroll() {
+            const items = document.querySelectorAll(".gallery-item");
+            items.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+                
+                if (rect.top <= windowHeight - 100 && rect.bottom >= 100) {
+                    item.classList.add("show");
+                } else {
+                    item.classList.remove("show"); // Reset animasi saat keluar dari layar
+                }
+            });
+        }
+
+        window.addEventListener("scroll", checkScroll);
+        window.addEventListener("load", checkScroll);
+    </script>
+</body>
+</html>
